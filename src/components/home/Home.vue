@@ -1,12 +1,20 @@
 <template>
-  <header>
-    <app-header> </app-header>
-  </header>
+  <div class="main-container">
+    <header>
+      <app-header> </app-header>
+    </header>
+    <repositories></repositories>
+    <footer>
+      <app-footer></app-footer>
+    </footer>
+  </div>
 </template>
 
 <script>
 
 import AppHeader from '@/components/app-header/AppHeader'
+import Repositories from '@/components/repositories/Repositories'
+import AppFooter from '@/components/app-footer/AppFooter'
 
 export default {
   name: 'Home',
@@ -16,27 +24,17 @@ export default {
     }
   },
   components: {
-    AppHeader
+    AppHeader,
+    Repositories,
+    AppFooter
   }
 }
 </script>
 
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
+.main-container{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 </style>

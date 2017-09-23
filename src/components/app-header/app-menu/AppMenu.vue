@@ -28,6 +28,9 @@ export default {
   background-color: #222423;
   width: 100%;
   flex-basis: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .menu-items {

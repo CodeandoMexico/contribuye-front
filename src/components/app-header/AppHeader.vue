@@ -40,6 +40,7 @@ export default {
   background-image: url('./../../assets/header.jpg');
   background-size: auto 100%;
   background-position: center;
+  background-repeat: no-repeat;
   font-weight: bold;
 }
 
