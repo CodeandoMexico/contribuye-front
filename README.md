@@ -1,9 +1,30 @@
 # contribuye-front
 
-Projects real time
+> A project for get help
 
-[![Build Status](https://travis-ci.org/enrique.magallon/contribuye-front.svg)](https://travis-ci.org/enrique.magallon/contribuye-front)
-[![Coverage Status](https://coveralls.io/repos/github/enrique.magallon/contribuye-front/badge.svg?branch=master)](https://coveralls.io/github/enrique.magallon/contribuye-front?branch=master)
-[![npm version](https://img.shields.io/npm/v/contribuye-front.svg?style=flat-square)](https://www.npmjs.com/package/contribuye-front)
-[![npm downloads](https://img.shields.io/npm/dm/contribuye-front.svg?style=flat-square)](https://www.npmjs.com/package/contribuye-front)
-[![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/enrique.magallon/contribuye-front)
+## Build Setup
+
+``` bash
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:8080
+npm run dev
+
+# build for production with minification
+npm run build
+
+# build for production and view the bundle analyzer report
+npm run build --report
+
+# run unit tests
+npm run unit
+
+# run e2e tests
+npm run e2e
+
+# run all tests
+npm test
+```
+
+For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
