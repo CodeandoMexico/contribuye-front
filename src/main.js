@@ -4,6 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
+import directives from './directives'
+
+for (let name in directives) {
+  Vue.directive(name, directives[name])
+}
 
 Vue.config.productionTip = false
 

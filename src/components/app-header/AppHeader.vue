@@ -39,7 +39,7 @@ export default {
   min-height: 440px;
   background-image: url('./../../assets/header.jpg');
   background-size: auto 100%;
-  background-position: center;
+  background-position: center 0;
   background-repeat: no-repeat;
   font-weight: bold;
 }
