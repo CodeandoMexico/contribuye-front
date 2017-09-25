@@ -4,6 +4,9 @@
       <repository-issue v-for="issue in repositories" :key="issue.id" :issue="issue" :reposInLine="getReposInLine()">
 
       </repository-issue>
+      <div class="repositories-empty" v-if="!repositories.length">
+        <h2 >No hay resultados con estos filtros</h2>
+      </div>
     </div>
   </div>
 </template>
@@ -42,7 +45,6 @@ export default {
     let elm = this
     this.$store.dispatch(types.SUBSCRIBE_TO_SOCKET).then(socket => {
       socket.on('events', (issues) => {
-        console.log(issues)
         issues = elm.removeReapeatedIssues(issues)
         elm.addDataToIssues(issues)
         elm.setAllLabels(issues)
@@ -128,5 +130,12 @@ export default {
   margin: 50px auto;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+
+.repositories-empty {
+  text-transform: uppercase;
+  color: #222423;
+  text-align: center;
+  width: 100%;
 }
 </style>

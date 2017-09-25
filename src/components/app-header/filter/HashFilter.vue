@@ -1,21 +1,23 @@
 <template>
-  <div class="filter-container">
-    <div class="filter-content">
-      <div class="hash-filter__container">
-        <div class="hash-filer__label"> Filtrar por</div>
-        <div class="hash-filter">
-          <multiselect class="hash-filter__search"
-            :tags="tagsList"
-            :options="options"
-            placeholder="Ejemplo: java acopio-api"
-            @changed="tagsChanged"
-          ></multiselect>
+  <div id="filter-reference" class="filter-wrapper">
+    <div class="filter-container" :class="{ 'filter--absolute' : isAbsoluteFilter}">
+      <div class="filter-content">
+        <div class="hash-filter__container">
+          <div class="hash-filer__label"> Filtrar por</div>
+          <div class="hash-filter">
+            <multiselect class="hash-filter__search"
+              :tags="tagsList"
+              :options="options"
+              placeholder="Ejemplo: java acopio-api"
+              @changed="tagsChanged"
+            ></multiselect>
+          </div>
         </div>
-      </div>
-      <div class="filter-sort__container">
-        <div class="filter-sort__actions">
-          <div> <span @click="setFilter(1)" :class="{active: selectedFilter === 1}">Recientes</span> </div>
-          <div> <span @click="setFilter(2)" :class="{active: selectedFilter === 2}"> Más comentados </span> </div>
+        <div class="filter-sort__container">
+          <div class="filter-sort__actions">
+            <div> <span @click="setFilter(1)" :class="{active: selectedFilter === 1}">Recientes</span> </div>
+            <div> <span @click="setFilter(2)" :class="{active: selectedFilter === 2}"> Más comentados </span> </div>
+          </div>
         </div>
       </div>
     </div>
@@ -36,7 +38,8 @@ export default {
     return {
       tagsList: [],
       isLoading: false,
-      selectedFilter: 1
+      selectedFilter: 1,
+      isAbsoluteFilter: false
     }
   },
   computed: {
@@ -46,6 +49,17 @@ export default {
   },
   created () {
     globalStore.registerModule('HashFilter', store)
+    this.$store.dispatch('scroll').then(() => {
+      window.addEventListener('scroll', () => {
+        let reference = window.document.getElementById('filter-reference')
+        if (window.scrollY >= reference.offsetTop && !this.isAbsoluteFilter) {
+          this.isAbsoluteFilter = true
+        }
+        if (window.scrollY < reference.offsetTop && this.isAbsoluteFilter) {
+          this.isAbsoluteFilter = false
+        }
+      })
+    })
   },
   beforeDestroy () {
     globalStore.unregisterModule('HashFilter')
@@ -79,10 +93,21 @@ export default {
 
 <style lang="scss" scoped>
 
+.filter-wrapper {
+  min-height: 86px;
+  width: 100%;
+}
+
 .filter-container {
   background-color: #F3476D;
   width: 100%;
   min-height: 86px;
+
+  &.filter--absolute {
+    position: fixed;
+    top: 60px;
+    left: 0;
+  }
 
   .filter-content {
     max-width: 1124px;

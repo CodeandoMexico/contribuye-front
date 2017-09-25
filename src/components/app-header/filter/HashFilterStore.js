@@ -18,8 +18,10 @@ export default {
       state.sortMethod = METHODS[method]
     },
     [types.SET_FILTER_OPTIONS] (state, options) {
-      console.log(options)
       state.options = options
+    },
+    [types.SET_ABSOLUTE] (state, absolute) {
+      state.absolue = absolute
     }
   },
   getters: {
@@ -31,6 +33,14 @@ export default {
     },
     [types.GET_FILTER_OPTIONS] (state) {
       return state.options
+    },
+    [types.GET_ABSOLUTE] (state) {
+      return state.absolue
+    }
+  },
+  actions: {
+    scroll ({commit, state}) {
+      return Promise.resolve(true)
     }
   }
 }

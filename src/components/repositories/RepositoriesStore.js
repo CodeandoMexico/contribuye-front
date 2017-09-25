@@ -48,7 +48,6 @@ export default {
       })
     },
     [types.REPOSITORIES_SORT_AGAIN] ({commit, state}, orderMethod) {
-      console.log('Sorting by', orderMethod)
       return Promise.resolve(true).then(() => {
         let issues = JSON.parse(JSON.stringify(state.issues))
         issues = issues.sort((a, b) => {
