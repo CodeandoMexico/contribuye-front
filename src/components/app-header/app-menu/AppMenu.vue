@@ -1,12 +1,12 @@
 <template>
   <div class="menu-container">
     <nav class="menu-items">
-      <a href="/#"><img id="menu-logo" src="./../../../assets/menu-logo.png" /></a>
-      <a class="active" href="/#"> Quiero ayudar </a>
-      <a class="need-help" href="/#"> Necesito ayuda </a>
-      <a href="/#"> Faq </a>
-      <a class="gratitude" href="/#"> Agradecimientos </a>
-      <a href="/#"> Contacto </a>
+      <a target="_blank" href="/#"><img id="menu-logo" src="./../../../assets/menu-logo.png" /></a>
+      <a target="_blank" class="active" href="http://sismomexico.org/#section-quiero_ayudar"> Quiero ayudar </a>
+      <a target="_blank" class="need-help" href="http://sismomexico.org/#section-necesito-ayuda"> Necesito ayuda </a>
+      <a target="_blank" href="http://sismomexico.org/#section-faq"> Faq </a>
+      <!-- <a target="_blank" class="gratitude" href="/#"> Agradecimientos </a> -->
+      <!-- <a target="_blank" href="/#"> Contacto </a> -->
     </nav>
   </div>
 </template>

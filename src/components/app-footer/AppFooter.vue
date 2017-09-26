@@ -3,25 +3,25 @@
   <div class="footer-content">
     <div class="links">
       <div class="first-space">
-        <a href="/#"> Quiero ayudar </a>
+        <a target="_blank" href="http://sismomexico.org/#section-quiero_ayudar"> Quiero ayudar </a>
       </div>
       <div>
-        <a href="/#"> Agradecimientos </a>
+        <!-- <a href="/#"> Agradecimientos </a> -->
       </div>
       <div class="second-space">
-        <a href="/#"> Necesito ayuda </a>
+        <a target="_blank" href="http://sismomexico.org/#section-necesito-ayuda"> Necesito ayuda </a>
       </div>
-      <div>
+      <!-- <div>
         <a href="/#"> Contacto </a>
-      </div>
+      </div> -->
       <div>
-        <a href="/#"> Preguntas frecuentes </a>
+        <a target="_blank" href="http://sismomexico.org/#section-faq"> Preguntas frecuentes </a>
       </div>
     </div>
     <div class="social">
-      <a class="slack-icon" href="/#"><img src="../../assets/slack.png" ></a>
-      <a class="github-icon" href="/#"><img src="../../assets/github.png" ></a>
-      <a href="/#"><img src="../../assets/twitter.png" ></a>
+      <a target="_blank" class="slack-icon" href="http://slack.codeandomexico.org"><img src="../../assets/slack.png" ></a>
+      <a target="_blank" class="github-icon" href="http://github.com/CodeandoMexico"><img src="../../assets/github.png" ></a>
+      <a target="_blank" href="http://twitter.com/CodeandoMexico"><img src="../../assets/twitter.png" ></a>
     </div>
   </div>
   </div>

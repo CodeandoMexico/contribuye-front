@@ -45,7 +45,7 @@ export default {
     let elm = this
     this.$store.dispatch(types.SUBSCRIBE_TO_SOCKET).then(socket => {
       socket.on('events', (issues) => {
-        issues = elm.removeReapeatedIssues(issues)
+        issues = elm.removeReapeatedAndClosedIssues(issues)
         elm.addDataToIssues(issues)
         elm.setAllLabels(issues)
         elm.$store.commit(types.REPOSITORIES_SET_ALL_ISSUES, issues)
@@ -91,13 +91,16 @@ export default {
         })
       }, this)
     },
-    removeReapeatedIssues (issues) {
+    removeReapeatedAndClosedIssues (issues) {
       let ids = {}
       return issues.filter(issue => {
         if (ids.hasOwnProperty(issue.id)) {
           return false
         }
         ids[issue.id] = true
+        if (issue.status.toUpperCase().trim() === 'CLOSED') {
+          return false
+        }
         return true
       })
     },

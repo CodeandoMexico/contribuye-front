@@ -8,13 +8,16 @@
       </div>
       <div class="repository-data">
         <span>
-          creado: {{getDate(issue.createdAt)}}
+          <i class="fa fa-file"></i>
+          {{getDate(issue.createdAt)}}
         </span>
         <span>
-          modificado: {{getDate(issue.updatedAt)}}
+          <i class="fa fa-pencil"></i>
+          {{getDate(issue.updatedAt)}}
         </span>
-        <span class="other">
-          comentarios: {{issue.comments}}
+        <span>
+          <i class="fa fa-comment"></i>
+          {{issue.comments}}
         </span>
       </div>
     </div>
@@ -38,7 +41,7 @@ export default {
       if (minutes.length < 2) {
         minutes = '0' + minutes
       }
-      return `${date.getDate()}/${this.months[date.getMonth()]}/${date.getFullYear()} ${date.getHours()}:${minutes}`
+      return `${date.getDate()} ${this.months[date.getMonth()]}`
     },
     open () {
       window.open(this.issue.url)
@@ -48,6 +51,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .repository-container {
   min-width: 255px;
   flex-shrink: 0;
@@ -113,7 +117,7 @@ h2 {
   justify-content: center;
   align-items: center;
   min-height: 26px;
-  margin: 0 6.5px;
+  margin: 5px 6.5px;
   border: none;
   background-color: #F3476D;
   color: white;
@@ -127,7 +131,6 @@ h2 {
 .repository-data {
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
   align-items: left;
   justify-content: center;
@@ -137,8 +140,13 @@ h2 {
   font-size: 14px;
   font-weight: bold;
 
-  .other {
-    padding-top: 5px; 
+  i {
+    width: 14px;
+    color: #F3476D;
+  }
+
+  span {
+    margin: 0 10px;
   }
 }
 
